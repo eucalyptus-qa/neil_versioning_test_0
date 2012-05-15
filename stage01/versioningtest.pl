@@ -157,7 +157,7 @@ sub delete_versioned_object {
 sub restore_object {
   my($s3_host, $s3curl_home, $id, $key, $s3_url, $bucket, $object, $version_id) = @_;
   $copy_source_string = "/$bucket/$object?versionId=$version_id";
-  $cmd = "$s3curl_home/s3curl.pl --endpoint $s3_host --id $id --key $key --copysource \"$copy_source_string\" --put /dev/null -- --include $s3_url/$bucket/$object";
+  $cmd = "$s3curl_home/s3curl.pl --endpoint $s3_host --id $id --key $key --copySrc \"$copy_source_string\" --put /dev/null -- --include $s3_url/$bucket/$object";
   open(RFH, "$cmd|");
   while(<RFH>) {
     print $_;

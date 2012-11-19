@@ -1,3 +1,37 @@
+neil_versioning_test_0
+======================
+
+## Description
+
+Ensure that the versioning of objects in Walrus works
+
+## Procedure
+
+1. Create bucket
+2. Enable versioning
+3. [IMPROVE] Check S3's DELETE operation works once an object has been deleted, subsequent default requests will no longer retrieve it. However, the previous version of the object will be preserved and can be retrieved by using the version id. Only the owner of an S3 bucket can permanently delete a version.
+4. Add an object
+5. Add another version
+6. Get the object by version_id
+7. delete the object with version id
+8. Delete the object
+9. Disable versioning
+10. Create bucket
+11. Enable versioning
+12. Add an object
+13. Delete the object
+14. Restore the object with $version
+15. [IMPROVE] add a step to create multiple versions and restore an intermediate one
+16. [IMPROVE] check for the validity of the retrieved object
+17. Get the object
+18. delete the object
+19. Delete the object root
+20. Delete the object version
+21. Disable versioning
+22. List versions
+23. Delete bucket
+
+
 # Eucalyptus Testunit Framework
 
 Eucalyptus Testunit Framework is designed to run a list of test scripts written by Eucalyptus developers.
